@@ -1,0 +1,13 @@
+version: "2.3"
+
+services:
+  cppdev:
+    container_name: cpp_dev
+    cap_add:
+      - SYS_PTRACE
+    build: .
+    security_opt:
+      - seccomp:unconfined
+    ipc: host
+    volumes:
+      - .:/cpp_dev
